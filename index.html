@@ -1,0 +1,74 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Pedido para o Andre</title>
+    <style>
+        body {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            height: 100vh;
+            background-color: #f0f0f0;
+            font-family: Arial, sans-serif;
+        }
+        .container {
+            text-align: center;
+            background-color: white;
+            padding: 20px;
+            border-radius: 10px;
+            box-shadow: 0 0 10px rgba(0,0,0,0.1);
+        }
+        .buttons {
+            margin-top: 20px;
+        }
+        .btn {
+            padding: 10px 20px;
+            margin: 5px;
+            border: none;
+            border-radius: 5px;
+            cursor: pointer;
+            font-size: 16px;
+        }
+        .btn-yes {
+            background-color: #4CAF50;
+            color: white;
+        }
+        .btn-no {
+            background-color: #f44336;
+            color: white;
+            position: relative;
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <h1>Me da o cu hoje ?</h1>
+        <div class="buttons">
+            <button class="btn btn-yes" onclick="handleYes()">Sim</button>
+            <button class="btn btn-no" onclick="handleNo()">Não</button>
+        </div>
+    </div>
+
+    <script>
+        function handleYes() {
+            window.location.href = "https://youtu.be/LxEa6LY1NzA?si=vrnjsmb2Q8lQnORt"; // Link para o vídeo do YouTube
+        }
+
+        function handleNo() {
+            const noButton = document.querySelector('.btn-no');
+            const container = document.querySelector('.container');
+            const containerRect = container.getBoundingClientRect();
+            const buttonRect = noButton.getBoundingClientRect();
+            
+            let newLeft = Math.random() * (containerRect.width - buttonRect.width);
+            let newTop = Math.random() * (containerRect.height - buttonRect.height);
+            
+            noButton.style.position = 'absolute';
+            noButton.style.left = `${newLeft}px`;
+            noButton.style.top = `${newTop}px`;
+        }
+    </script>
+</body>
+</html>
